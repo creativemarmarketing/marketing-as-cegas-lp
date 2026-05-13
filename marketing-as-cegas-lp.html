@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing às Cegas - Creativemar</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F1A2E;
+    --navy-mid: #162035;
+    --copper: #B87A4E;
+    --copper-light: #C9956A;
+    --cream: #F5EDE4;
+    --cream-light: #FAF5F0;
+    --white: #FFFFFF;
+    --text-dark: #1A1A2E;
+    --text-mid: #4A4A5A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream-light);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO BANNER ── */
+  .top-banner {
+    background: #8B1A1A;
+    padding: 14px 20px;
+    text-align: center;
+  }
+  .top-banner p {
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(14px, 3.5vw, 17px);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .hero {
+    background: var(--navy);
+    padding: 60px 24px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(184,122,78,0.15);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    border: 1px solid rgba(184,122,78,0.1);
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(184,122,78,0.15);
+    border: 1px solid rgba(184,122,78,0.3);
+    color: var(--copper-light);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 9vw, 56px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--copper-light);
+  }
+
+  .hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(13px, 3.5vw, 16px);
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: rgba(255,255,255,0.85);
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .badge svg { flex-shrink: 0; }
+
+  .hero-desc {
+    color: rgba(255,255,255,0.7);
+    font-size: clamp(16px, 4.5vw, 20px);
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto 40px;
+  }
+  .hero-desc strong { color: var(--white); text-decoration: underline; text-decoration-color: var(--copper); text-underline-offset: 3px; }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--copper);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 18px 36px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, transform 0.2s;
+    width: 100%;
+    max-width: 420px;
+  }
+  .btn-primary:hover { background: var(--copper-light); transform: translateY(-1px); }
+
+  .hero-lock {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px 20px;
+    text-align: left;
+    margin-top: 14px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-lock p { color: rgba(255,255,255,0.6); font-size: 16px; line-height: 1.5; }
+  .hero-lock a { color: var(--copper-light); text-decoration: underline; }
+
+  /* ── PHOTO ── */
+  .photo-section {
+    background: var(--cream-light);
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  .photo-section img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+  }
+  .photo-placeholder {
+    width: 100%;
+    max-width: 600px;
+    height: 340px;
+    background: linear-gradient(160deg, var(--navy) 0%, #1e2d4a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.35);
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .photo-placeholder svg { opacity: 0.3; }
+
+  /* ── SE VOCÊ ── */
+  .section-se-voce {
+    background: var(--cream-light);
+    padding: 60px 24px;
+  }
+  .card-se-voce {
+    background: var(--cream);
+    border: 1px solid rgba(184,122,78,0.2);
+    border-radius: 20px;
+    padding: 36px 28px;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+  .card-se-voce h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 7vw, 34px);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 32px;
+  }
+  .item-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .item-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: clamp(14px, 3.5vw, 15px);
+    line-height: 1.65;
+    color: var(--text-mid);
+  }
+  .arrow-box {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    background: rgba(184,122,78,0.12);
+    border: 1px solid rgba(184,122,78,0.25);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--copper);
+    font-size: 16px;
+    margin-top: 1px;
+  }
+
+  /* ── ENTÃO PROVAVELMENTE ── */
+  .section-entao {
+    background: var(--cream-light);
+    padding: 10px 24px 60px;
+  }
+  .section-entao h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 6.5vw, 32px);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 32px;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-entao h2 em { font-style: italic; color: var(--copper); }
+  .entao-list { max-width: 580px; margin: 0 auto; }
+
+  /* ── AUTORIDADE ── */
+  .section-autoridade {
+    background: var(--navy);
+    padding: 60px 24px;
+    text-align: left;
+  }
+  .autoridade-inner { max-width: 580px; margin: 0 auto; }
+  .autoridade-inner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 6vw, 32px);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+  .autoridade-inner h2 em { font-style: italic; color: var(--copper-light); }
+  .autoridade-inner p {
+    color: rgba(255,255,255,0.7);
+    font-size: clamp(14px, 3.5vw, 15px);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+  .autoridade-inner p strong { color: var(--white); }
+  .divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 28px 0; }
+
+  /* ── PROVA SOCIAL ── */
+  .section-prova {
+    background: var(--cream-light);
+    padding: 60px 24px;
+  }
+  .prova-card {
+    background: var(--white);
+    border: 1px solid rgba(184,122,78,0.2);
+    border-radius: 16px;
+    padding: 28px 24px;
+    max-width: 580px;
+    margin: 0 auto 16px;
+  }
+  .prova-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .prova-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--copper) 0%, var(--navy) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .prova-name { font-weight: 600; font-size: 16px; color: var(--navy); }
+  .prova-role { font-size: 16px; color: var(--text-mid); margin-top: 2px; }
+  .prova-badge-tag {
+    margin-left: auto;
+    background: rgba(184,122,78,0.1);
+    color: var(--copper);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .prova-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-mid);
+  }
+  .prova-text strong { color: var(--navy); }
+
+  /* ── COMO FUNCIONA ── */
+  .section-funciona {
+    background: var(--navy);
+    border-radius: 24px 24px 0 0;
+    padding: 60px 24px;
+    margin-top: 10px;
+  }
+  .funciona-inner { max-width: 580px; margin: 0 auto; }
+  .funciona-inner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 6vw, 30px);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 36px;
+  }
+  .etapa {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 22px 20px;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .etapa-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--copper);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 32px;
+    text-align: center;
+  }
+  .etapa-title {
+    font-weight: 700;
+    color: var(--white);
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .etapa-desc {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+
+  /* ── PRICING ── */
+  .section-pricing {
+    background: var(--navy);
+    padding: 20px 24px 70px;
+  }
+  .pricing-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(184,122,78,0.3);
+    border-radius: 20px;
+    padding: 36px 28px;
+    max-width: 540px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .pricing-eyebrow {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 7vw, 36px);
+    font-style: italic;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .pricing-sub {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 28px;
+  }
+  .ticket-label {
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+  }
+  .check-list {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .check-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.8);
+    font-size: 16px;
+  }
+  .check-icon {
+    width: 22px; height: 22px;
+    border: 1.5px solid rgba(184,122,78,0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--copper-light);
+    font-size: 16px;
+  }
+  .lote-label {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 6px;
+    text-align: left;
+  }
+  .price {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 11vw, 56px);
+    font-weight: 900;
+    color: var(--white);
+    text-align: left;
+    line-height: 1;
+    margin-bottom: 28px;
+  }
+  .price span { font-size: 22px; font-weight: 400; margin-right: 4px; vertical-align: top; margin-top: 10px; display: inline-block; }
+
+  .footer-links {
+    text-align: center;
+    padding: 24px;
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.35);
+    font-size: 16px;
+    text-decoration: underline;
+    margin: 0 10px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero > * { animation: fadeUp 0.6s ease both; }
+  .hero > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero > *:nth-child(5) { animation-delay: 0.5s; }
+  .hero > *:nth-child(6) { animation-delay: 0.6s; }
+</style>
+</head>
+<body>
+
+<!-- TOP BANNER -->
+<div class="top-banner">
+  <p>Oferta de Lançamento: R$ 97 por tempo limitado. Depois volta a R$ 197.<br>Já ajudamos 150+ negócios a enxergar seus pontos cegos. Agora liberado pra você em forma 100% digital.</p>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Diagnóstico Estratégico</div>
+
+  <h1><em>Marketing</em><br>às Cegas</h1>
+
+  <div class="hero-badges">
+    <div class="badge">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      Diagnóstico Online
+    </div>
+    <div class="badge">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Entrega em 48h
+    </div>
+  </div>
+
+  <p class="hero-desc">
+    Descubra exatamente <strong>por que o seu marketing não gera resultado</strong> e receba um plano claro do ponto cego e o que fazer para aumentar sua receita.
+  </p>
+
+  <button class="btn-primary" onclick="document.location.href='#pricing';">QUERO DESCOBRIR MEU PONTO CEGO</button>
+
+  <div class="hero-lock" style="margin-top:18px;">
+    <svg width="22" height="22" fill="none" stroke="rgba(184,122,78,0.8)" stroke-width="1.5" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:2px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    <p>Ainda não tem certeza se esse diagnóstico é para você? <a href="#se-voce">Continue lendo essa página...</a></p>
+  </div>
+</section>
+
+<!-- HERO PHOTO -->
+<div class="photo-section">
+  <img src="tati-hero-iphone.jpg" alt="Tati Macedo - Análise Estratégica de Marketing" style="max-width: 100%; height: auto; display: block;">
+</div>
+
+<!-- SE VOCÊ -->
+<section class="section-se-voce" id="se-voce">
+  <div class="card-se-voce">
+    <h2>Se você…</h2>
+    <ul class="item-list">
+      <li>
+        <div class="arrow-box">→</div>
+        Investe em marketing mas não consegue enxergar de onde vêm (ou não vêm) os clientes.
+      </li>
+      <li>
+        <div class="arrow-box">→</div>
+        Tem um negócio que fatura, mas depende quase 100% de indicação para fechar novos contratos.
+      </li>
+      <li>
+        <div class="arrow-box">→</div>
+        Sente que o Instagram, o tráfego pago e as campanhas existem no seu negócio, mas não trabalham juntos.
+      </li>
+      <li>
+        <div class="arrow-box">→</div>
+        Não sabe o que priorizar no marketing e fica testando coisas sem ver retorno real.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ENTÃO PROVAVELMENTE -->
+<section class="section-entao">
+  <h2>Então, <em>é bem provável que você…</em></h2>
+  <div class="entao-list">
+    <ul class="item-list">
+      <li>
+        <div class="arrow-box">→</div>
+        Já tenha contratado agência ou freelancer e saído com a sensação de que o dinheiro foi embora sem resultado.
+      </li>
+      <li>
+        <div class="arrow-box">→</div>
+        Já tenha tentado de tudo — conteúdo, tráfego, email — sem conseguir encaixar as peças em um sistema que funcione.
+      </li>
+      <li>
+        <div class="arrow-box">→</div>
+        Já tenha sentido que o problema não é falta de esforço, mas de uma visão clara de onde está o ponto cego.
+      </li>
+      <li>
+        <div class="arrow-box">→</div>
+        Já tenha chegado em reuniões sem saber se o que o seu time de marketing faz está certo ou errado.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- SOBRE TATI -->
+<section class="section-autoridade">
+  <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+
+    <!-- COLUNA TEXTO -->
+    <div class="autoridade-inner" style="margin: 0;">
+      <h2 style="margin-bottom: 16px;">Se você não me conhece,<br><em>meu nome é Tati Macedo.</em></h2>
+      <p style="margin-bottom: 20px;">E eu já estive exatamente onde você está hoje…</p>
+
+      <p style="margin-bottom: 18px;">Com <strong>mais de 20 anos de experiência em marketing estratégico</strong>, passei por grandes empresas como Ambev, Tenda e Stz, assessorias de marketing e diversos MEIs e PMEs como CMO as a service. E o que aprendi é que a maioria dos negócios não tem problema de execução, tem problema de diagnóstico.</p>
+
+      <hr class="divider" style="margin: 24px 0;">
+
+      <p style="margin-bottom: 18px;">Nos últimos anos, desenvolvi e refinei um método com dezenas de empresas que estavam investindo em marketing sem clareza e que passaram a ter um sistema com <strong>lógica, prioridade e resultado mensurável.</strong></p>
+
+      <p style="margin-bottom: 18px;">No <strong>Marketing às Cegas</strong>, vou abrir o seu negócio, mapear cada camada do seu marketing e te entregar o diagnóstico que nenhuma agência faz — porque o que você precisa não é de mais execução. É de ver o que está invisível.</p>
+
+      <p style="color:var(--copper-light);font-family:'Playfair Display',serif;font-size:clamp(18px,4vw,24px);font-weight:700;font-style:italic;margin-bottom:24px;">Em 48 horas, você vai sair com a clareza que levaria meses para encontrar sozinho.</p>
+    </div>
+
+    <!-- COLUNA FOTOS -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <img src="tati-foto-1.jpg" alt="Tati apresentando" style="width: 100%; border-radius: 12px; object-fit: cover; height: 280px;">
+      <img src="tati-foto-3.jpg" alt="Tati em ação" style="width: 100%; border-radius: 12px; object-fit: cover; height: 280px;">
+      <img src="tati-foto-2.jpg" alt="Tati trabalhando" style="width: 100%; border-radius: 12px; object-fit: cover; height: 280px; grid-column: 1 / -1; justify-self: center; max-width: 280px;">
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <button class="btn-primary" onclick="document.location.href='#pricing';" style="background: var(--copper); max-width: 300px;">QUERO DESCOBRIR MEU PONTO CEGO</button>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    section[class*="section"] > div[style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+  }
+</style>
+
+<!-- MÉTODO ZONA CEGA -->
+<section style="background: var(--cream-light); padding: 80px 24px;">
+  <div style="max-width: 580px; margin: 0 auto;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,6vw,36px);font-weight:700;color:var(--navy);margin-bottom:16px;">Descubra exatamente<br><em style="color:var(--copper);font-style:italic;">por que seu marketing não gera resultado</em></h2>
+    <p style="font-size:16px;color:var(--text-mid);line-height:1.8;margin-bottom:40px;">E receba um plano claro do ponto cego e o que fazer para aumentar sua receita</p>
+
+    <div style="display:flex;flex-direction:column;gap:20px;margin-bottom:48px;">
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:28px;flex-shrink:0;">🔍</span>
+        <div>
+          <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">MAPEIA AS 7 CAMADAS invisíveis do seu marketing</h4>
+          <p style="font-size:16px;color:var(--text-mid);line-height:1.7;">Enquanto a maioria só vê a superfície (redes sociais, tráfego, email...)</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:28px;flex-shrink:0;">🎯</span>
+        <div>
+          <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">IDENTIFICA OS 3-5 PONTOS CEGOS específicos do SEU negócio</h4>
+          <p style="font-size:16px;color:var(--text-mid);line-height:1.7;">Não uma lista genérica</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:28px;flex-shrink:0;">💡</span>
+        <div>
+          <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">PRIORIZA O QUE REALMENTE IMPORTA</h4>
+          <p style="font-size:16px;color:var(--text-mid);line-height:1.7;">Muitos negócios fazem marketing certo, só que na ordem errada</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:28px;flex-shrink:0;">📊</span>
+        <div>
+          <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">CRIA UM MAPA visual que você ENTENDE</h4>
+          <p style="font-size:16px;color:var(--text-mid);line-height:1.7;">Não um relatório de 50 páginas que ninguém lê</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(184,122,78,0.08);border:1px solid rgba(184,122,78,0.2);border-radius:14px;padding:28px;margin-bottom:0;">
+      <p style="font-size:16px;color:var(--text-mid);line-height:1.8;margin-bottom:0;">Agências não vendem diagnóstico. Elas vendem execução. Logo, nunca querem identificar que o REAL problema é estratégico — porque aí você seria o dono da solução, não cliente delas forever.</p>
+      <p style="font-size:16px;color:var(--text-mid);line-height:1.8;margin-top:16px;margin-bottom:0;"><strong style="color:var(--navy);">Aqui? A gente ganha quando você ENXERGA.</strong> Porque aí você age com inteligência.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE DE RESULTADOS -->
+<section style="background: var(--navy); padding: 80px 24px;">
+  <div style="max-width: 580px; margin: 0 auto;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,6vw,36px);font-weight:700;color:var(--white);margin-bottom:48px;">De onde você está agora até o resultado real</h2>
+
+    <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:48px;">Deixa a gente ser honesto: o diagnóstico NÃO é mágica.<br><br><strong style="color:var(--white);">O diagnóstico é a BÚSSOLA. O trabalho é você caminhar.</strong><br><br>Mas quando você SABE PARA ONDE IR, tudo fica mais rápido.</p>
+
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px;margin-bottom:20px;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:16px;">SEMANA 1: Você recebe o Diagnóstico</h3>
+      <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:20px;">Você responde o questionário numa sexta (30-40 min). Na terça já tem tudo pronto: o mapa visual do seu marketing e os pontos cegos.</p>
+      <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px;">Você sente:</p>
+      <ul style="list-style:none;margin-top:8px;margin-bottom:0;">
+        <li style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:8px;">• Alívio de finalmente entender o que está acontecendo</li>
+        <li style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:8px;">• Clareza de que o problema era bem diferente do que imaginava</li>
+        <li style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:0;">• Um pouco de frustração: por que não vi isso antes?</li>
+      </ul>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px;margin-bottom:20px;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:16px;">SEMANA 2-3: Você começa a executar</h3>
+      <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:20px;">Você sabe exatamente o que fazer (Prioridade 1, 2, 3). Começa a mexer na primeira prioridade. As mudanças já começam a aparecer.</p>
+      <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px;">E aí muda muito:</p>
+      <ul style="list-style:none;margin-top:8px;margin-bottom:0;">
+        <li style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:8px;">• Ações que eram confusas agora fazem sentido</li>
+        <li style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:8px;">• Seu time sabe por que está fazendo cada coisa</li>
+        <li style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:0;">• Acabam aquelas conversas sem fim de "qual rede social usar" porque o plano já deixa claro</li>
+      </ul>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px;margin-bottom:20px;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:16px;">MÊS 2-3: Os primeiros resultados chegam</h3>
+      <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:20px;">Mais ou menos 30 dias depois que você começar a executar as prioridades, você já sente a diferença. Pode ser mais leads, mais conversão, clientes voltando, mais faturamento. Depende do seu negócio.</p>
+      <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px;">O que clientes que já passaram por isso falam:</p>
+      <ul style="list-style:none;margin-top:8px;margin-bottom:0;">
+        <li style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:8px;">• "A Tati enxergou em 2 dias o que eu tentava ver há 2 anos"</li>
+        <li style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:0;">• "Implementamos as prioridades 1 e 2 e a gente dobrou a captação"</li>
+      </ul>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:16px;">MÊS 4+: Tudo fica diferente</h3>
+      <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:20px;">Seu marketing não é mais aquele tiro no escuro. Você tem números que fazem sentido. Sabe exatamente o que está funcionando e o que não tá. Para de jogar dinheiro fora.</p>
+      <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px;">E aí o crescimento fica inevitável porque:</p>
+      <ul style="list-style:none;margin-top:8px;margin-bottom:0;">
+        <li style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:8px;">• Você investe nos canais que REALMENTE funcionam (não segue tendência cega)</li>
+        <li style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:8px;">• Seu time não fica preso discutindo, sabe para onde ir</li>
+        <li style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:0;">• Você consegue escalar o que já está funcionando</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="section-prova">
+  <div style="max-width:580px;margin:0 auto 28px;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,5.5vw,28px);font-weight:700;color:var(--navy);margin-bottom:24px;">Resultados de quem já passou pelo diagnóstico:</h2>
+  </div>
+
+  <div class="prova-card">
+    <div class="prova-header">
+      <div class="prova-avatar">RC</div>
+      <div>
+        <div class="prova-name">Ricardo C.</div>
+        <div class="prova-role">Empresário · Setor de Serviços</div>
+      </div>
+      <div class="prova-badge-tag">✦ Resultado</div>
+    </div>
+    <p class="prova-text">Antes do diagnóstico eu achava que o problema era o meu time de marketing. Depois, entendi que era a estratégia. A Tati enxergou em 48h o que eu não consegui ver em 2 anos. <strong>Reestruturamos tudo e dobramos a captação em 3 meses.</strong></p>
+  </div>
+
+  <div class="prova-card">
+    <div class="prova-header">
+      <div class="prova-avatar">AM</div>
+      <div>
+        <div class="prova-name">Ana M.</div>
+        <div class="prova-role">Empreendedora · E-commerce</div>
+      </div>
+      <div class="prova-badge-tag">✦ Resultado</div>
+    </div>
+    <p class="prova-text">Eu estava investindo em tráfego pago, conteúdo e email, mas nada conversava. O diagnóstico mostrou exatamente onde estava o buraco. <strong>Pela primeira vez eu saí de uma reunião de marketing sabendo o que priorizar.</strong></p>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="section-funciona">
+  <div class="funciona-inner">
+    <h2>O nosso Diagnóstico vai funcionar assim…</h2>
+
+    <div class="etapa">
+      <div class="etapa-num">1</div>
+      <div>
+        <div class="etapa-title">🗂 Mapeamento do seu negócio</div>
+        <div class="etapa-desc">Você responde um questionário estratégico profundo sobre seu negócio, canais, público, time e resultados atuais.</div>
+      </div>
+    </div>
+
+    <div class="etapa">
+      <div class="etapa-num">2</div>
+      <div>
+        <div class="etapa-title">🔍 Análise das camadas invisíveis</div>
+        <div class="etapa-desc">Eu mergulho nos dados, no posicionamento, na jornada do cliente e nos pontos cegos que ninguém está enxergando.</div>
+      </div>
+    </div>
+
+    <div class="etapa">
+      <div class="etapa-num">3</div>
+      <div>
+        <div class="etapa-title">📋 Entrega do Diagnóstico + Mapa</div>
+        <div class="etapa-desc">Em até 48h você recebe um link de download com o relatório completo em PDF + mapa visual do seu marketing com prioridades claras.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE VOCÊ VAI RECEBER -->
+<section style="background: var(--cream-light); padding: 60px 24px;">
+  <div style="max-width: 580px; margin: 0 auto;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(24px,6vw,32px);font-weight:700;color:var(--navy);margin-bottom:32px;">Aqui está exatamente o que vai chegar para você</h2>
+  </div>
+
+  <div style="max-width: 580px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px;">
+
+    <!-- Card 1 -->
+    <div style="background:var(--white);border:1px solid rgba(184,122,78,0.2);border-radius:16px;padding:28px;">
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:28px;flex-shrink:0;">📱</span>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:12px;">Mapa Completo (Link Personalizado + PDF)</h3>
+          <p style="font-size:16px;color:var(--text-mid);line-height:1.7;margin-bottom:12px;">Você recebe um link personalizado com o diagnóstico completo da sua empresa em formato visual e interativo. Tudo que está no link você também tem em um PDF profissional para salvar, imprimir ou compartilhar com seu time. Acessa quando quiser, de qualquer dispositivo.</p>
+          <div style="font-size:16px;color:var(--text-mid);line-height:1.8;">
+            <strong style="color:var(--navy);">Contém:</strong><br>
+            • Análise completa da situação atual do seu marketing<br>
+            • Os 3-5 pontos cegos identificados<br>
+            • Impacto de cada ponto cego no seu negócio<br>
+            • Recomendações específicas e priorizadas<br>
+            • Mapa visual: onde você está → pontos cegos → onde ir<br>
+            • Próximos passos claros (prioridade 1, 2, 3)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div style="background:var(--white);border:1px solid rgba(184,122,78,0.2);border-radius:16px;padding:28px;">
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:28px;flex-shrink:0;">🎯</span>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:12px;">Plano de Ação Personalizado</h3>
+          <p style="font-size:16px;color:var(--text-mid);line-height:1.7;">Além do diagnóstico, você recebe um plano específico do que fazer a partir de amanhã. Quais ações tomar primeiro, segundo e terceiro. Não é genérico — é feito para o seu negócio.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 48px;">
+      <button class="btn-primary" onclick="document.location.href='#pricing';" style="background: var(--copper); max-width: 360px;">QUERO MEU DIAGNÓSTICO + MAPA</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- O QUE FAZER DEPOIS DO DIAGNÓSTICO -->
+<section style="background: var(--cream-light); padding: 80px 24px;">
+  <div style="max-width: 580px; margin: 0 auto;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,6vw,34px);font-weight:700;color:var(--navy);margin-bottom:12px;">Você recebe o mapa<br>e o ponto cego do seu marketing.</h2>
+    <p style="font-family:'Playfair Display',serif;font-size:clamp(20px,5vw,26px);font-style:italic;color:var(--copper);margin-bottom:48px;">E agora?</p>
+
+    <div style="display: grid; grid-template-columns: 1fr; gap: 32px;">
+
+      <!-- Caminho 1 -->
+      <div style="background: var(--white); border: 1px solid rgba(184,122,78,0.2); border-radius: 16px; padding: 36px 28px;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:8px;">Caminho 1: Você implementa sozinho</h3>
+        <p style="font-size:16px;color:var(--text-mid);font-weight:600;margin-bottom:20px;">Recomendado para: Quem tem tempo ou um time para tocar</p>
+
+        <div style="background:rgba(184,122,78,0.08);border:1px solid rgba(184,122,78,0.15);border-radius:12px;padding:16px;margin-bottom:20px;">
+          <p style="font-size:16px;color:var(--text-mid);line-height:1.8;margin-bottom:0;"><strong style="color:var(--navy);">Tempo estimado: 5 a 9 semanas</strong> para implementar as prioridades 1, 2 e 3 e começar a ver resultados consistentes.</p>
+        </div>
+
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:14px;">
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--text-mid);line-height:1.6;">
+            <span style="color:var(--copper);font-weight:700;flex-shrink:0;">→</span>
+            <span>Você recebe o mapa com as prioridades claras</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--text-mid);line-height:1.6;">
+            <span style="color:var(--copper);font-weight:700;flex-shrink:0;">→</span>
+            <span>Implementa Prioridade 1 no seu ritmo</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--text-mid);line-height:1.6;">
+            <span style="color:var(--copper);font-weight:700;flex-shrink:0;">→</span>
+            <span>Depois implementa Prioridade 2 e 3</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--text-mid);line-height:1.6;">
+            <span style="color:var(--copper);font-weight:700;flex-shrink:0;">→</span>
+            <span>Você monitora os resultados e ajusta</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Caminho 2 -->
+      <div style="background: var(--white); border: 1px solid rgba(184,122,78,0.2); border-radius: 16px; padding: 36px 28px;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:8px;">Caminho 2: Implementação com suporte especializado</h3>
+        <p style="font-size:16px;color:var(--text-mid);font-weight:600;margin-bottom:20px;">Recomendado para: Quem quer garantia de implementação rápida</p>
+
+        <div style="background:rgba(184,122,78,0.08);border:1px solid rgba(184,122,78,0.15);border-radius:12px;padding:16px;margin-bottom:20px;">
+          <p style="font-size:16px;color:var(--text-mid);line-height:1.8;margin-bottom:0;"><strong style="color:var(--navy);">Se você quer acelerar a implementação</strong>, a gente tem especialistas em cada área (tráfego, conteúdo, posicionamento, email) para ajudar você a tocar o plano. Quer conversar?</p>
+        </div>
+
+        <p style="font-size:16px;color:var(--text-mid);line-height:1.8;"><strong style="color:var(--navy);">Basta responder o questionário e deixar um contato</strong> que a gente te entra em contato para conversar sobre como você pode acelerar essa implementação.</p>
+
+        <p style="font-size:16px;color:var(--text-mid);margin-top:20px;margin-bottom:0;">💬 Envie: <strong style="color:var(--navy);">consultoria@creativemar.com.br</strong></p>
+      </div>
+
+    </div>
+
+    <div style="text-align: center; margin-top: 48px;">
+      <button class="btn-primary" onclick="document.location.href='#pricing';" style="background: var(--copper); max-width: 100%; max-width: 360px;">QUERO MEU DIAGNÓSTICO + MAPA</button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--navy);padding:60px 24px;">
+  <div style="max-width: 580px; margin: 0 auto;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(24px,6vw,32px);font-weight:700;color:var(--white);margin-bottom:36px;">Ainda tem dúvidas?</h2>
+
+    <div style="display:flex;flex-direction:column;gap:16px;">
+
+      <!-- FAQ Item 1 -->
+      <details style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--white);font-size:16px;display:flex;justify-content:space-between;align-items:center;">Quanto tempo leva mesmo pra eu receber meu mapa de Marketing às Cegas?</summary>
+        <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.7;margin-top:16px;">Você responde o questionário (30-40 min), eu analiso durante 1-2 dias úteis, e você recebe tudo pronto em até 48 horas. Se responder numa segunda, recebe até quarta. Sem atrasos.</p>
+      </details>
+
+      <!-- FAQ Item 2 -->
+      <details style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--white);font-size:16px;display:flex;justify-content:space-between;align-items:center;">Como funciona o questionário? É complicado?</summary>
+        <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.7;margin-top:16px;">Nada complicado. Na verdade, é como uma <strong style="color:var(--white);">consultoria estratégica completa sobre seu negócio</strong> — mas sem encontros online. Você responde cerca de 24 perguntas profundas sobre seu negócio, canais, público e resultados — são perguntas que um estrategista de marketing faria em uma consultoria cara do mercado. A maioria é múltipla escolha, algumas abertas. Leva uns 30-40 minutos.<br><br>Você recebe um link, responde no seu tempo, e recebe os materiais prontos para <strong style="color:var(--white);">aplicar no seu negócio</strong>.<br><br>O diagnóstico que você recebe é <strong style="color:var(--copper-light);">material que não existe no mercado</strong>. Nenhuma agência faz isso — é proprietário, desenvolvido ao longo de 20 anos de experiência.</p>
+      </details>
+
+      <!-- FAQ Item 3 -->
+      <details style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--white);font-size:16px;display:flex;justify-content:space-between;align-items:center;">Se eu receber e achar que não é para mim, o que faço?</summary>
+        <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.7;margin-top:16px;">Sem problema. Você tem 24h após a compra para desistir sem perguntas — dinheiro de volta na hora. Se passou dos 24h mas recebeu e ficou insatisfeito, tem até 7 dias para conversar com a gente (suporte@creativemar.com.br). Vamos encontrar uma solução.</p>
+      </details>
+
+      <!-- FAQ Item 4 -->
+      <details style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--white);font-size:16px;display:flex;justify-content:space-between;align-items:center;">Eu sou freelancer/agência. Serve para mim?</summary>
+        <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.7;margin-top:16px;">Serve sim! O diagnóstico funciona para: empreendedores, donos de negócio, freelancers que querem sistematizar marketing, agências que querem entender melhor seus clientes. Se você vende algo e quer saber por que o marketing não funciona, é para você.</p>
+      </details>
+
+      <!-- FAQ Item 5 -->
+      <details style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--white);font-size:16px;display:flex;justify-content:space-between;align-items:center;">Depois de receber, como eu aplico essas recomendações?</summary>
+        <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.7;margin-top:16px;">O diagnóstico dá direcionamento claro — o que fazer primeiro, segundo, terceiro. Você pode aplicar sozinho, contratar alguém, ou conversar com a gente sobre um <strong style="color:var(--white);">suporte extra de um especialista na área para te ajudar a aplicar no seu dia a dia</strong>. O mapa é seu guia, a implementação fica com você.</p>
+      </details>
+
+      <!-- FAQ Item 6 -->
+      <details style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--white);font-size:16px;display:flex;justify-content:space-between;align-items:center;">Posso compartilhar o diagnóstico com meu time?</summary>
+        <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.7;margin-top:16px;">Sim! O diagnóstico é seu. Você pode compartilhar com sócios, gerentes, ou quem estiver tomando decisão de marketing. Muita gente usa para alinhar o time sobre prioridades.</p>
+      </details>
+
+      <!-- FAQ Item 7 -->
+      <details style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--white);font-size:16px;display:flex;justify-content:space-between;align-items:center;">Qual a diferença disso para conteúdo gratuito que tem na internet?</summary>
+        <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.7;margin-top:16px;"><strong style="color:var(--white);">Tudo.</strong><br><br>Conteúdo gratuito é genérico — funciona para 10% da plateia. Quando você estuda 20 empresas diferentes, cria um guia que não funciona para nenhuma delas especificamente. Aqui você recebe <strong style="color:var(--white);">um diagnóstico feito especificamente para o seu negócio</strong>. Seus dados, seu mercado, seu público, sua competição, seus canais.<br><br>É tipo a diferença entre um remédio para dor de cabeça genérico e um medicamento prescrito por um médico que te examinou.</p>
+      </details>
+
+      <!-- FAQ Item 8 -->
+      <details style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--white);font-size:16px;display:flex;justify-content:space-between;align-items:center;">Preciso ter algo específico ou conhecimento prévio pra responder o questionário?</summary>
+        <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.7;margin-top:16px;">Não precisa. Se você é dono(a) ou gerente do negócio e conhece dados básicos (faturamento, canais que usa, quanto investe em marketing), está pronto(a). As perguntas são feitas especificamente para extrair as informações certas — você não precisa ser expert em marketing para responder.</p>
+      </details>
+
+      <!-- FAQ Item 9 -->
+      <details style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--white);font-size:16px;display:flex;justify-content:space-between;align-items:center;">O que acontece se eu receber e não souber por onde começar?</summary>
+        <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.7;margin-top:16px;">O diagnóstico já traz a resposta: você começa por Prioridade 1. Pronto. As prioridades vêm ordenadas do mais impactante para o menos — você não precisa pensar, só seguir. Se ainda sim ficar em dúvida, tem a opção de conversar com a gente sobre o Caminho 2 (implementação com suporte) para alguém do time tocar junto com você.</p>
+      </details>
+
+      <!-- FAQ Item 10 -->
+      <details style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--white);font-size:16px;display:flex;justify-content:space-between;align-items:center;">E se não implementar? Preciso fazer isso rapidinho?</summary>
+        <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.7;margin-top:16px;">Não. O diagnóstico é seu para sempre. Você acessa quando quiser, implementa no seu tempo. Muita gente recebe, deixa de lado por 1-2 meses, aí uma crise de marketing acontece e ela volta ao mapa. O legal é que <strong style="color:var(--white);">quando você volta, o diagnóstico continua lá, válido, e você pode tocar as coisas</strong>. O que importa é que um dia você USE — porque aí sim é que os resultados chegam.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section style="background:var(--cream-light);padding:60px 24px;">
+  <div style="max-width: 580px; margin: 0 auto;">
+    <div style="background:linear-gradient(135deg,rgba(184,122,78,0.08),rgba(184,122,78,0.03));border:1px solid rgba(184,122,78,0.3);border-radius:16px;padding:40px;text-align:center;">
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,5vw,28px);font-weight:700;color:var(--navy);margin-bottom:24px;">Seu Risco é Praticamente Zero</h2>
+
+      <h3 style="font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:var(--copper);margin-bottom:20px;">100% Garantido ou Seu Dinheiro de Volta</h3>
+
+      <p style="color:var(--text-mid);font-size:16px;line-height:1.8;margin-bottom:16px;">Arrependido? Desista nos primeiros <strong style="color:var(--navy);">24h após a compra</strong>, sem explicações necessárias — seu dinheiro volta na hora.</p>
+
+      <p style="color:var(--text-mid);font-size:16px;line-height:1.8;">Já recebeu o mapa do ponto cego e ficou insatisfeito? Você tem até <strong style="color:var(--navy);">7 dias para questionar</strong>. Fale com a gente em <strong style="color:var(--copper);">suporte@creativemar.com.br</strong>. Estamos aqui para garantir que você saia com clareza.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section-pricing" id="pricing">
+  <div class="pricing-card">
+    <p class="pricing-eyebrow">Marketing às Cegas</p>
+    <p class="pricing-sub">O Mapa Completo do Seu Marketing</p>
+
+    <!-- COMPARATIVO DE PREÇOS -->
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;margin-bottom:28px;text-align:left;font-size:16px;color:rgba(255,255,255,0.6);line-height:1.8;">
+      <div style="text-decoration:line-through;margin-bottom:8px;">R$ 3.000 — Consultoria estratégica completa com especialista</div>
+      <div style="text-decoration:line-through;margin-bottom:8px;">R$ 1.890 — Estratégias de posicionamento + encontros on-line</div>
+      <div style="text-decoration:line-through;margin-bottom:0;">R$ 397 — Diagnóstico redes sociais</div>
+    </div>
+
+    <div class="ticket-label">Formulário + Mapa em Link + Mapa em PDF</div>
+
+    <ul class="check-list">
+      <li><div class="check-icon">✓</div> Questionário estratégico aprofundado</li>
+      <li><div class="check-icon">✓</div> Análise dos seus canais e posicionamento</li>
+      <li><div class="check-icon">✓</div> Relatório com pontos cegos identificados</li>
+      <li><div class="check-icon">✓</div> Prioridades claras de ação</li>
+      <li><div class="check-icon">✓</div> Entrega automática em 48 horas</li>
+    </ul>
+
+    <p class="lote-label">Investimento</p>
+    <div class="price"><span>R$</span>97</div>
+
+    <p style="font-size:16px;letter-spacing:1px;text-transform:uppercase;color:var(--copper-light);margin-bottom:24px;text-align:center;font-weight:700;">Lançamento Especial — Valor Promocional por Tempo Limitado</p>
+
+    <button class="btn-primary" onclick="alert('Este botão será conectado ao Kiwify em breve!');">GARANTIR MEU DIAGNÓSTICO</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer-links">
+  <a href="#">Política de Privacidade</a>
+  <a href="#">Termos e Condições</a>
+</div>
+
+</body>
+</html>
